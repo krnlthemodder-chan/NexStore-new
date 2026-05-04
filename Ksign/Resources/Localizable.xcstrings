@@ -785,6 +785,7 @@
       }
     },
     "Added Tweaks" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1502,6 +1503,7 @@
       }
     },
     "Available Tweaks" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

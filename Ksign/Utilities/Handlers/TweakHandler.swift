@@ -8,12 +8,13 @@
 
 import Foundation
 import ZsignSwift
+import OSLog
 
 class TweakHandler {
 	private let _fileManager = FileManager.default
 	private var _urlsToInject: [URL] = []
 	private var _directoriesToCheck: [URL] = []
-    
+    private var _injectedDylibNames: [String] = []
 
 	private var _urls: [URL]
 	private let _app: URL
@@ -96,6 +97,11 @@ class TweakHandler {
 				try await _handleExtractedDirectoryContents(at: _urlsToInject)
 			}
 		}
+
+		// inject into all extensions if enabled
+		if _options.injectIntoExtensions && !_injectedDylibNames.isEmpty {
+			_injectIntoAllExtensions(dylibNames: _injectedDylibNames)
+		}
 	}
 	
 	// finally, handle extracted contents
@@ -121,8 +127,25 @@ class TweakHandler {
 	
 	// Inject imported dylib file
 	private func _handleDylib(at url: URL) async throws {
-		let destinationURL = _app.appendingPathComponent("Frameworks").appendingPathComponent(url.lastPathComponent)
-		
+		var destinationURL = _app
+		var injectFolder = _options.injectFolder
+
+		// check for "/Frameworks/", then append the destinationUrl
+		if _options.injectFolder == .frameworks {
+			destinationURL = destinationURL.appendingPathComponent("Frameworks")
+		}
+
+		// We check for "@rpath" and "/Frameworks/", if they're both enabled force
+		// the inject folder to be root "/" instead, as the @rpath is already in
+		// frameworks
+		if
+			_options.injectPath == .rpath && _options.injectFolder == .frameworks
+		{
+			injectFolder = .root
+		}
+
+		destinationURL = destinationURL.appendingPathComponent(url.lastPathComponent)
+
 		if !_fileManager.fileExists(atPath: destinationURL.path) {
 			try _fileManager.copyItem(at: url, to: destinationURL)
 		}
@@ -143,8 +166,10 @@ class TweakHandler {
 		// inject if there's a valid app main executable
 		_ = Zsign.injectDyLib(
 			appExecutable: appexe.path,
-			with: "@executable_path/Frameworks/\(destinationURL.lastPathComponent)"
+			with: "\(_options.injectPath.rawValue)\(injectFolder.rawValue)\(destinationURL.lastPathComponent)"
 		)
+
+		_injectedDylibNames.append(destinationURL.lastPathComponent)
 	}
 	
 	// Extracy imported deb file
@@ -308,6 +333,90 @@ extension TweakHandler {
 		}
 		
 		return frameworkDirectories
+	}
+
+	// Discovers all .appex bundles in the app's PlugIns and Extensions directories
+	private func _discoverAppExtensions() -> [URL] {
+		var extensions: [URL] = []
+		
+		let plugInsPath = _app.appendingPathComponent("PlugIns")
+		let extensionsPath = _app.appendingPathComponent("Extensions")
+		
+		for directory in [plugInsPath, extensionsPath] {
+			guard _fileManager.fileExists(atPath: directory.path) else { continue }
+			
+			do {
+				let contents = try _fileManager.contentsOfDirectory(
+					at: directory,
+					includingPropertiesForKeys: nil,
+					options: [.skipsHiddenFiles]
+				)
+				
+				let appexBundles = contents.filter { url in
+					url.pathExtension.lowercased() == "appex" && url.hasDirectoryPath
+				}
+				
+				extensions.append(contentsOf: appexBundles)
+			} catch {
+				Logger.misc.warning("Failed to enumerate \(directory.path): \(error.localizedDescription)")
+			}
+		}
+		
+		return extensions
+	}
+
+	// Injects a dylib into an extension's executable
+	private func _injectIntoExtension(extensionURL: URL, dylibName: String) {
+		guard 
+			let extensionBundle = Bundle(url: extensionURL),
+			let extensionExecutable = extensionBundle.executableURL 
+		else {
+			Logger.misc.warning("Skipping \(extensionURL.lastPathComponent): couldn't read bundle")
+			return
+		}
+		
+		var injectFolder = _options.injectFolder
+		if _options.injectPath == .rpath && _options.injectFolder == .frameworks {
+			injectFolder = .root
+		}
+		
+		let injectPath: String
+		if _options.injectPath == .rpath {
+			injectPath = "@rpath/\(dylibName)"
+		} else if injectFolder == .frameworks {
+			injectPath = "@executable_path/../../Frameworks/\(dylibName)"
+		} else {
+			injectPath = "@executable_path/../../\(dylibName)"
+		}
+		
+		let success = Zsign.injectDyLib(
+			appExecutable: extensionExecutable.path,
+			with: injectPath
+		)
+		
+		if success {
+			Logger.misc.info("Injected \(dylibName) into extension: \(extensionURL.lastPathComponent)")
+		} else {
+			Logger.misc.warning("Failed to inject into extension: \(extensionURL.lastPathComponent)")
+		}
+	}
+
+	// Injects all dylibs into all discovered extensions
+	private func _injectIntoAllExtensions(dylibNames: [String]) {
+		let extensions = _discoverAppExtensions()
+
+		guard !extensions.isEmpty else {
+			Logger.misc.info("No app extensions found for injection")
+			return
+		}
+
+		Logger.misc.info("Found \(extensions.count) app extension(s) for injection")
+
+		for extensionURL in extensions {
+			for dylibName in dylibNames {
+				_injectIntoExtension(extensionURL: extensionURL, dylibName: dylibName)
+			}
+		}
 	}
 }
 
