@@ -12,7 +12,7 @@ import ZsignSwift
 struct DylibsView: View {
     var app: AppInfoPresentable
     @Environment(\.dismiss) private var dismiss
-    @AppStorage("Feather.useLastExportLocation") private var _useLastExportLocation: Bool = false
+    @AppStorage("NexStore.useLastExportLocation") private var _useLastExportLocation: Bool = false
     
     @State private var dylibFiles: [URL] = []
     @State private var selectedDylibs: [URL] = []

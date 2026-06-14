@@ -9,23 +9,23 @@ import SwiftUI
 import NimbleViews
 
 struct AppearanceView: View {
-    @AppStorage("Feather.userInterfaceStyle") private var _userIntefacerStyle: Int = UIUserInterfaceStyle.unspecified.rawValue
+    @AppStorage("NexStore.userInterfaceStyle") private var _userIntefacerStyle: Int = UIUserInterfaceStyle.unspecified.rawValue
     
-	@AppStorage("Feather.libraryCellAppearance") private var _libraryCellAppearance: Int = 0
+	@AppStorage("NexStore.libraryCellAppearance") private var _libraryCellAppearance: Int = 0
 	
 	private let _libraryCellAppearanceMethods: [String] = [
 		.localized("Standard"),
 		.localized("Pill")
 	]
 	
-	@AppStorage("Feather.storeCellAppearance") private var _storeCellAppearance: Int = 1
+	@AppStorage("NexStore.storeCellAppearance") private var _storeCellAppearance: Int = 1
 	
 	private let _storeCellAppearanceMethods: [String] = [
 		.localized("Standard"),
 		.localized("Big Description")
 	]
 	
-	@AppStorage("Feather.accentColor") private var _selectedAccentColor: Int = 0
+	@AppStorage("NexStore.accentColor") private var _selectedAccentColor: Int = 0
 	@StateObject private var accentColorManager = AccentColorManager.shared
     
 	private let _accentColors: [(name: String, color: Color)] = [

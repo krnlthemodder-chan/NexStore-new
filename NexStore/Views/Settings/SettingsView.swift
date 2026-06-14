@@ -10,7 +10,7 @@ import NimbleViews
 
 // MARK: - View
 struct SettingsView: View {
-    @AppStorage("feather.selectedCert") private var _storedSelectedCert: Int = 0
+    @AppStorage("nexstore.selectedCert") private var _storedSelectedCert: Int = 0
     @FetchRequest(
         entity: CertificatePair.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \CertificatePair.date, ascending: false)],

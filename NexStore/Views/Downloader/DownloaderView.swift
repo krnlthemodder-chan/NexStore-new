@@ -212,7 +212,7 @@ Enter the URL of the website containing the IPA file (Direct install/ITMS Servic
     }
     
     private func importIpaToLibrary(_ file: DownloadItem) {
-        let id = "FeatherManualDownload_\(UUID().uuidString)"
+        let id = "NexStoreManualDownload_\(UUID().uuidString)"
         let download = self.libraryManager.startArchive(from: file.url, id: id)
         libraryManager.handlePachageFile(url: file.url, dl: download) { err in
             DispatchQueue.main.async {

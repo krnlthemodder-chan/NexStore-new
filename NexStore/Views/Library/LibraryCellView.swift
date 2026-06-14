@@ -11,7 +11,7 @@ import NimbleViews
 
 // MARK: - View
 struct LibraryCellView: View {
-	@AppStorage("Feather.libraryCellAppearance") private var _libraryCellAppearance: Int = 0
+	@AppStorage("NexStore.libraryCellAppearance") private var _libraryCellAppearance: Int = 0
     @Environment(\.editMode) private var editMode
 	var certInfo: Date.ExpirationInfo? {
 		Storage.shared.getCertificate(from: app)?.expiration?.expirationInfo()

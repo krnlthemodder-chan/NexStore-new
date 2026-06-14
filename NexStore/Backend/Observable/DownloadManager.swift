@@ -146,7 +146,7 @@ class DownloadManager: NSObject, ObservableObject {
     }
     
 	func isManualDownload(_ string: String) -> Bool {
-		return string.contains("FeatherManualDownload")
+		return string.contains("NexStoreManualDownload")
 	}
 	
 	func getDownload(by id: String) -> Download? {
@@ -218,7 +218,7 @@ extension DownloadManager: URLSessionDownloadDelegate {
 		var downloadDir: URL
 		if !OptionsManager.shared.options.saveAppStoreDownloadsToDownloadsFolder {
 			let tempDirectory = FileManager.default.temporaryDirectory
-			downloadDir = tempDirectory.appendingPathComponent("FeatherDownloads", isDirectory: true)
+			downloadDir = tempDirectory.appendingPathComponent("NexStoreDownloads", isDirectory: true)
 		} else {
 			downloadDir = URL.documentsDirectory.appendingPathComponent("Downloads")
 		}

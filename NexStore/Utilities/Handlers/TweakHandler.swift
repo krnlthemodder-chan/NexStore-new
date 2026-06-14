@@ -69,7 +69,7 @@ class TweakHandler {
 		let frameworksDir = _app.appendingPathComponent("Frameworks")
 		try _fileManager.createDirectoryIfNeeded(at: frameworksDir)
 		
-		let baseTmpDir = _fileManager.temporaryDirectory.appendingPathComponent("FeatherTweak_\(UUID().uuidString)")
+		let baseTmpDir = _fileManager.temporaryDirectory.appendingPathComponent("NexStoreTweak_\(UUID().uuidString)")
 		try _fileManager.createDirectoryIfNeeded(at: baseTmpDir)
 		
 		// check for appropriate files, if theres debs

@@ -57,7 +57,7 @@ struct SigningView: View {
 	init(app: AppInfoPresentable, signAndInstall: Bool = false) {
 		self.app = app
 		self.signAndInstall = signAndInstall
-		let storedCert = UserDefaults.standard.integer(forKey: "feather.selectedCert")
+		let storedCert = UserDefaults.standard.integer(forKey: "nexstore.selectedCert")
 		__temporaryCertificate = State(initialValue: storedCert)
 	}
 		
@@ -329,7 +329,7 @@ extension SigningView {
 				if signAndInstall {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                         NotificationCenter.default.post(
-                            name: NSNotification.Name("feather.installApp"),
+                            name: NSNotification.Name("nexstore.installApp"),
                             object: nil
                         )
                     }

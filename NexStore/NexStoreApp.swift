@@ -11,7 +11,7 @@ import OSLog
 import IDeviceSwift
 
 @main
-struct FeatherApp: App {
+struct NexStoreApp: App {
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 	let heartbeat = HeartbeatManager.shared
 	@StateObject var downloadManager = DownloadManager.shared
@@ -54,7 +54,7 @@ struct FeatherApp: App {
 				let fullPath = url.validatedScheme(after: "/install/"),
 				let downloadURL = URL(string: fullPath)
 			{
-				_ = DownloadManager.shared.startDownload(from: downloadURL, id: "FeatherManualDownload_\(UUID().uuidString)")
+				_ = DownloadManager.shared.startDownload(from: downloadURL, id: "NexStoreManualDownload_\(UUID().uuidString)")
 			}
 		} else {
 			if url.pathExtension == "ipa" || url.pathExtension == "tipa" {
@@ -114,7 +114,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 config.urlCache = nil
                 return DataLoader(configuration: config)
             }()
-            let dataCache = try? DataCache(name: "thewonderofyou.Feather.datacache") // disk cache
+            let dataCache = try? DataCache(name: "novadev.nexstore.datacache") // disk cache
             let imageCache = Nuke.ImageCache() // memory cache
             dataCache?.sizeLimit = 500 * 1024 * 1024
             imageCache.costLimit = 100 * 1024 * 1024
@@ -182,7 +182,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private func _addDefaultCertificates() {
             guard
-                UserDefaults.standard.bool(forKey: "feather.didImportDefaultCertificates") == false,
+                UserDefaults.standard.bool(forKey: "nexstore.didImportDefaultCertificates") == false,
                 let signingAssetsURL = Bundle.main.url(forResource: "signing-assets", withExtension: nil)
             else {
                 return
@@ -224,7 +224,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                         
                     }
                 }
-                UserDefaults.standard.set(true, forKey: "feather.didImportDefaultCertificates")
+                UserDefaults.standard.set(true, forKey: "nexstore.didImportDefaultCertificates")
             } catch {
                 Logger.misc.error("Failed to list signing-assets: \(error)")
             }

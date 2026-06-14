@@ -31,7 +31,7 @@
 			containerPortal = 3379C1B12DA869A1004372DA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3379C1B82DA869A1004372DA;
-			remoteInfo = Feather;
+			remoteInfo = NexStore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -172,7 +172,7 @@
 				C42CC1AC2F4370F20064A4A2 /* IDevice */,
 				C42CC1AE2F4370F20064A4A2 /* IDeviceSwift */,
 			);
-			productName = Feather;
+			productName = NexStore;
 			productReference = 3379C1B92DA869A1004372DA /* NexStore.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -192,7 +192,7 @@
 			name = NexStoreTests;
 			packageProductDependencies = (
 			);
-			productName = FeatherTests;
+			productName = NexStoreTests;
 			productReference = AABA5D192DB3C87800BFCD2C /* NexStoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -285,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Will copy acknowledgements\"\n\nACKNOWLEDGEMENTS_DIR=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/com.mono0926.LicensePlist.Output\nDESTINATION_PATH=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Settings.bundle/\n\ncp -r \"${ACKNOWLEDGEMENTS_DIR}\"/thewonderofyou.Feather \"${DESTINATION_PATH}\"\ncp -r \"${ACKNOWLEDGEMENTS_DIR}\"/thewonderofyou.Feather.plist \"${DESTINATION_PATH}\"\nrm -rf \"${ACKNOWLEDGEMENTS_DIR}\"\n";
+			shellScript = "echo \"Will copy acknowledgements\"\n\nACKNOWLEDGEMENTS_DIR=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/com.mono0926.LicensePlist.Output\nDESTINATION_PATH=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Settings.bundle/\n\ncp -r \"${ACKNOWLEDGEMENTS_DIR}\"/novadev.nexstore \"${DESTINATION_PATH}\"\ncp -r \"${ACKNOWLEDGEMENTS_DIR}\"/novadev.nexstore.plist \"${DESTINATION_PATH}\"\nrm -rf \"${ACKNOWLEDGEMENTS_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -449,7 +449,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/Feather.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/NexStore.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -500,7 +500,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SERVER $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NexStore/Supporting Files/Feather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NexStore/Supporting Files/NexStore-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -517,7 +517,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/Feather.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/NexStore.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -566,7 +566,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SERVER;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NexStore/Supporting Files/Feather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NexStore/Supporting Files/NexStore-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 16.0;
@@ -578,7 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_ENTITLEMENTS = "Feather/Supporting Files/Feather.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/NexStore.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -586,7 +586,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thewonderofyou.FeatherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = novadev.nexstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -601,7 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_ENTITLEMENTS = "Feather/Supporting Files/Feather.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/FeaNexStorether.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -609,7 +609,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thewonderofyou.FeatherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = novadev.nexstoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;

@@ -12,7 +12,7 @@ final class Storage: ObservableObject {
 	static let shared = Storage()
 	let container: NSPersistentContainer
 	
-	private let _name: String = "Feather"
+	private let _name: String = "NexStore"
 	
 	init(inMemory: Bool = false) {
 		container = NSPersistentContainer(name: _name)

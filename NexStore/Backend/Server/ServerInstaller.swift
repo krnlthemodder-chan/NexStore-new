@@ -98,18 +98,18 @@ class ServerInstaller: Identifiable, ObservableObject {
 	}
 		
 	static func getServerMethod() -> Int {
-		UserDefaults.standard.integer(forKey: "Feather.serverMethod")
+		UserDefaults.standard.integer(forKey: "NexStore.serverMethod")
 	}
 	
 	static func getIPFix() -> Bool {
-		UserDefaults.standard.bool(forKey: "Feather.ipFix")
+		UserDefaults.standard.bool(forKey: "NexStore.ipFix")
 	}
 	
 	static func setServerMethod(_ method: Int) {
-		UserDefaults.standard.set(method, forKey: "Feather.serverMethod")
+		UserDefaults.standard.set(method, forKey: "NexStore.serverMethod")
 	}
 	
 	static func setIPFix(_ enabled: Bool) {
-		UserDefaults.standard.set(enabled, forKey: "Feather.ipFix")
+		UserDefaults.standard.set(enabled, forKey: "NexStore.ipFix")
 	}
 }

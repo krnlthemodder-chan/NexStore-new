@@ -43,7 +43,7 @@ struct BulkSigningView: View {
 
 	init(apps: [AppInfoPresentable]) {
 		self.apps = apps
-		let storedCert = UserDefaults.standard.integer(forKey: "feather.selectedCert")
+		let storedCert = UserDefaults.standard.integer(forKey: "nexstore.selectedCert")
 		__temporaryCertificate = State(initialValue: storedCert)
 		
 		let defaultOptions = OptionsManager.shared.options

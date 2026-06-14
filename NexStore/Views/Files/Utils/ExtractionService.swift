@@ -125,7 +125,7 @@ class ExtractionService {
     }
     
     private static func _selectedExtractionLibrary() -> String {
-        return UserDefaults.standard.string(forKey: "Feather.extractionLibrary") ?? "Zip"
+        return UserDefaults.standard.string(forKey: "NexStore.extractionLibrary") ?? "Zip"
     }
     
     private static func _Zip(

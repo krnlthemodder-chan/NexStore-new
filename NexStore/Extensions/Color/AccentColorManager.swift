@@ -12,7 +12,7 @@ import UIKit
 class AccentColorManager: ObservableObject {
     static let shared = AccentColorManager()
     
-    @AppStorage("Feather.accentColor") private var _selectedAccentColor: Int = 0 {
+    @AppStorage("NexStore.accentColor") private var _selectedAccentColor: Int = 0 {
         didSet {
             objectWillChange.send()
         }

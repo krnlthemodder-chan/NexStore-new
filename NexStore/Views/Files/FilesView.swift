@@ -23,7 +23,7 @@ struct FilesView: View {
     @StateObject private var downloadManager = DownloadManager.shared
     @State private var searchText = ""
 
-    @AppStorage("Feather.useLastExportLocation") private var _useLastExportLocation: Bool = false
+    @AppStorage("NexStore.useLastExportLocation") private var _useLastExportLocation: Bool = false
 
     @State private var plistFileURL: URL?
     @State private var hexEditorFileURL: URL?
@@ -417,7 +417,7 @@ struct FilesView: View {
     }
     
     private func importIpaToLibrary(_ file: FileItem) {
-        let id = "FeatherManualDownload_\(UUID().uuidString)"
+        let id = "NexStoreManualDownload_\(UUID().uuidString)"
         let download = self.downloadManager.startArchive(from: file.url, id: id)
         downloadManager.handlePachageFile(url: file.url, dl: download) { err in
             DispatchQueue.main.async {

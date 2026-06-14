@@ -10,8 +10,8 @@ import NimbleJSON
 import NimbleViews
 
 struct ServerView: View {
-	@AppStorage("Feather.ipFix") private var _ipFix: Bool = false
-	@AppStorage("Feather.serverMethod") private var _serverMethod: Int = 0
+	@AppStorage("NexStore.ipFix") private var _ipFix: Bool = false
+	@AppStorage("NexStore.serverMethod") private var _serverMethod: Int = 0
 	
 	private let _serverMethods: [String] = [
 		.localized("Fully Local"), 

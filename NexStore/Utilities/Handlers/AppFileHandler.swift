@@ -31,7 +31,7 @@ final class AppFileHandler: NSObject, @unchecked Sendable {
 		self._install = install
 		self._download = download
 		self._uniqueWorkDir = _fileManager.temporaryDirectory
-			.appendingPathComponent("FeatherImport_\(_uuid)", isDirectory: true)
+			.appendingPathComponent("NexStoreImport_\(_uuid)", isDirectory: true)
 		
 		super.init()
 		print("Import initiated for: \(_ipa.lastPathComponent) with ID: \(_uuid)")
@@ -54,7 +54,7 @@ final class AppFileHandler: NSObject, @unchecked Sendable {
 		Zip.addCustomFileExtension("tipa")
 		
 		let download = self._download
-		let library = UserDefaults.standard.string(forKey: "Feather.extractionLibrary") ?? "Zip"
+		let library = UserDefaults.standard.string(forKey: "NexStore.extractionLibrary") ?? "Zip"
 		
 		try await withCheckedThrowingContinuation { continuation in
 			DispatchQueue.global(qos: .utility).async {
@@ -158,7 +158,7 @@ final class AppFileHandler: NSObject, @unchecked Sendable {
 	}
 	
 	private func _directory() async throws -> URL {
-		// Documents/Feather/Unsigned/\(UUID)
+		// Documents/NexStore/Unsigned/\(UUID)
 		_fileManager.unsigned(_uuid)
 	}
 	

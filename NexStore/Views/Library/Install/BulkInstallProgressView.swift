@@ -14,15 +14,15 @@ struct BulkInstallProgressView: View {
     var app: AppInfoPresentable
     @StateObject var viewModel = InstallerStatusViewModel()
     
-    @AppStorage("Feather.installationMethod") private var _installationMethod: Int = 0
-    @AppStorage("Feather.serverMethod") private var _serverMethod: Int = 0
+    @AppStorage("NexStore.installationMethod") private var _installationMethod: Int = 0
+    @AppStorage("NexStore.serverMethod") private var _serverMethod: Int = 0
     @StateObject var installer: ServerInstaller
     @State private var _isWebviewPresenting = false
     @State private var progressTask: Task<Void, Never>?
     
     init(app: AppInfoPresentable) {
         self.app = app
-        let method = UserDefaults.standard.integer(forKey: "Feather.installationMethod")
+        let method = UserDefaults.standard.integer(forKey: "NexStore.installationMethod")
         let viewModel = InstallerStatusViewModel(isIdevice: method == 1)
         self._viewModel = StateObject(wrappedValue: viewModel)
         self._installer = StateObject(wrappedValue: try! ServerInstaller(app: app, viewModel: viewModel))

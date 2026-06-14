@@ -10,10 +10,10 @@ import Zip
 import NimbleViews
 
 struct ArchiveView: View {
-	@AppStorage("Feather.compressionLevel") private var _compressionLevel: Int = ZipCompression.DefaultCompression.rawValue
-	@AppStorage("Feather.useShareSheetForArchiving") private var _useShareSheet: Bool = true
-	@AppStorage("Feather.useLastExportLocation") private var _useLastExportLocation: Bool = false
-	@AppStorage("Feather.extractionLibrary") private var _extractionLibrary: String = "Zip"
+	@AppStorage("NexStore.compressionLevel") private var _compressionLevel: Int = ZipCompression.DefaultCompression.rawValue
+	@AppStorage("NexStore.useShareSheetForArchiving") private var _useShareSheet: Bool = true
+	@AppStorage("NexStore.useLastExportLocation") private var _useLastExportLocation: Bool = false
+	@AppStorage("NexStore.extractionLibrary") private var _extractionLibrary: String = "Zip"
     
     var body: some View {
 		NBList(.localized("Archive & Extraction")) {
