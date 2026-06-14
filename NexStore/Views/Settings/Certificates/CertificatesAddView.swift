@@ -20,17 +20,17 @@ struct CertificatesAddView: View {
 	
 	@State private var _p12Data: Data? = nil
 	@State private var _provisionData: Data? = nil
-	@State private var _isFromKsign: Bool = false
+	@State private var _isFromNexStore: Bool = false
 	
 	@State private var _isImportingP12Presenting = false
 	@State private var _isImportingMobileProvisionPresenting = false
-	@State private var _isImportingKsignPresenting = false
+	@State private var _isImportingNexStorePresenting = false
 	@State private var _isPasswordAlertPresenting = false
 	@State private var _errorMessage: String = ""
 	@State private var _isErrorPresenting = false
 	
 	var saveButtonDisabled: Bool {
-		if _isFromKsign {
+		if _isFromNexStore {
 			return _p12Data == nil || _provisionData == nil
 		} else {
 			return _p12URL == nil || _provisionURL == nil
@@ -77,7 +77,7 @@ struct CertificatesAddView: View {
 					onDocumentsPicked: { urls in
 						guard let selectedFileURL = urls.first else { return }
 						self._p12URL = selectedFileURL
-						self._isFromKsign = false
+						self._isFromNexStore = false
 					}
 				)
 			}
@@ -87,7 +87,7 @@ struct CertificatesAddView: View {
 					onDocumentsPicked: { urls in
 						guard let selectedFileURL = urls.first else { return }
 						self._provisionURL = selectedFileURL
-						self._isFromKsign = false
+						self._isFromNexStore = false
 					}
 				)
 			}

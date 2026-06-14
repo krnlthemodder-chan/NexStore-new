@@ -37,23 +37,23 @@
 
 /* Begin PBXFileReference section */
 		336D43972DB7454A00206400 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		3379C1B92DA869A1004372DA /* Ksign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ksign.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AABA5D192DB3C87800BFCD2C /* KsignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KsignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3379C1B92DA869A1004372DA /* NexStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NexStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AABA5D192DB3C87800BFCD2C /* NexStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3371F6492DA92A1800281AC6 /* Exceptions for "Ksign" folder in "Ksign" target */ = {
+		3371F6492DA92A1800281AC6 /* Exceptions for "NexStore" folder in "NexStore" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/ellekit.deb,
 				Resources/Info.plist,
 			);
-			target = 3379C1B82DA869A1004372DA /* Ksign */;
+			target = 3379C1B82DA869A1004372DA /* NexStore */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		33CF134C2DB5B9BC0021D4C5 /* Exceptions for "Ksign" folder in "Copy Bundle Resources" phase from "Ksign" target */ = {
+		33CF134C2DB5B9BC0021D4C5 /* Exceptions for "NexStore" folder in "Copy Bundle Resources" phase from "NexStore" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 3379C1B72DA869A1004372DA /* Resources */;
 			membershipExceptions = (
@@ -63,13 +63,13 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3379C1BB2DA869A1004372DA /* Ksign */ = {
+		3379C1BB2DA869A1004372DA /* NexStore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3371F6492DA92A1800281AC6 /* Exceptions for "Ksign" folder in "Ksign" target */,
-				33CF134C2DB5B9BC0021D4C5 /* Exceptions for "Ksign" folder in "Copy Bundle Resources" phase from "Ksign" target */,
+				3371F6492DA92A1800281AC6 /* Exceptions for "NexStore" folder in "NexStore" target */,
+				33CF134C2DB5B9BC0021D4C5 /* Exceptions for "NexStore" folder in "Copy Bundle Resources" phase from "NexStore" target */,
 			);
-			path = Ksign;
+			path = NexStore;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -119,7 +119,7 @@
 		3379C1B02DA869A1004372DA = {
 			isa = PBXGroup;
 			children = (
-				3379C1BB2DA869A1004372DA /* Ksign */,
+				3379C1BB2DA869A1004372DA /* NexStore */,
 				3371F7302DA9ECDD00281AC6 /* Frameworks */,
 				3379C1BA2DA869A1004372DA /* Products */,
 			);
@@ -128,8 +128,8 @@
 		3379C1BA2DA869A1004372DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3379C1B92DA869A1004372DA /* Ksign.app */,
-				AABA5D192DB3C87800BFCD2C /* KsignTests.xctest */,
+				3379C1B92DA869A1004372DA /* NexStore.app */,
+				AABA5D192DB3C87800BFCD2C /* NexStoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3379C1B82DA869A1004372DA /* Ksign */ = {
+		3379C1B82DA869A1004372DA /* NexStore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3379C1CD2DA869A3004372DA /* Build configuration list for PBXNativeTarget "Ksign" */;
+			buildConfigurationList = 3379C1CD2DA869A3004372DA /* Build configuration list for PBXNativeTarget "NexStore" */;
 			buildPhases = (
 				3379C1B52DA869A1004372DA /* Sources */,
 				3379C1B62DA869A1004372DA /* Frameworks */,
@@ -152,9 +152,9 @@
 				339776072DC9D0F800642FFB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3379C1BB2DA869A1004372DA /* Ksign */,
+				3379C1BB2DA869A1004372DA /* NexStore */,
 			);
-			name = Ksign;
+			name = NexStore;
 			packageProductDependencies = (
 				3371F7312DA9ECDD00281AC6 /* Zip */,
 				33CF13382DB5ACFB0021D4C5 /* SWCompression */,
@@ -173,12 +173,12 @@
 				C42CC1AE2F4370F20064A4A2 /* IDeviceSwift */,
 			);
 			productName = Feather;
-			productReference = 3379C1B92DA869A1004372DA /* Ksign.app */;
+			productReference = 3379C1B92DA869A1004372DA /* NexStore.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AABA5D182DB3C87800BFCD2C /* KsignTests */ = {
+		AABA5D182DB3C87800BFCD2C /* NexStoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AABA5D1F2DB3C87800BFCD2C /* Build configuration list for PBXNativeTarget "KsignTests" */;
+			buildConfigurationList = AABA5D1F2DB3C87800BFCD2C /* Build configuration list for PBXNativeTarget "NexStoreTests" */;
 			buildPhases = (
 				AABA5D152DB3C87800BFCD2C /* Sources */,
 				AABA5D162DB3C87800BFCD2C /* Frameworks */,
@@ -189,11 +189,11 @@
 			dependencies = (
 				AABA5D1E2DB3C87800BFCD2C /* PBXTargetDependency */,
 			);
-			name = KsignTests;
+			name = NexStoreTests;
 			packageProductDependencies = (
 			);
 			productName = FeatherTests;
-			productReference = AABA5D192DB3C87800BFCD2C /* KsignTests.xctest */;
+			productReference = AABA5D192DB3C87800BFCD2C /* NexStoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3379C1B42DA869A1004372DA /* Build configuration list for PBXProject "Ksign" */;
+			buildConfigurationList = 3379C1B42DA869A1004372DA /* Build configuration list for PBXProject "NexStore" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -249,8 +249,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3379C1B82DA869A1004372DA /* Ksign */,
-				AABA5D182DB3C87800BFCD2C /* KsignTests */,
+				3379C1B82DA869A1004372DA /* NexStore */,
+				AABA5D182DB3C87800BFCD2C /* NexStoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +313,7 @@
 		};
 		AABA5D1E2DB3C87800BFCD2C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3379C1B82DA869A1004372DA /* Ksign */;
+			target = 3379C1B82DA869A1004372DA /* NexStore */;
 			targetProxy = AABA5D1D2DB3C87800BFCD2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -321,7 +321,7 @@
 /* Begin XCBuildConfiguration section */
 		3379C1CB2DA869A3004372DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 3379C1BB2DA869A1004372DA /* Ksign */;
+			baseConfigurationReferenceAnchor = 3379C1BB2DA869A1004372DA /* NexStore */;
 			baseConfigurationReferenceRelativePath = Resources/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,7 +386,7 @@
 		};
 		3379C1CC2DA869A3004372DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 3379C1BB2DA869A1004372DA /* Ksign */;
+			baseConfigurationReferenceAnchor = 3379C1BB2DA869A1004372DA /* NexStore */;
 			baseConfigurationReferenceRelativePath = Resources/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -449,7 +449,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Ksign/Supporting Files/Feather.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/Feather.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -459,7 +459,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Ksign/Resources",
+					"$(PROJECT_DIR)/NexStore/Resources",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"SERVER=1",
@@ -467,8 +467,8 @@
 					"$(inherited)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ksign/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Ksign;
+				INFOPLIST_FILE = NexStore/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NexStore;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (c) 2025 Nagata Asami";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -485,12 +485,12 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Ksign/Resources",
-					"$(PROJECT_DIR)/Ksign/Resources/idevice",
+					"$(PROJECT_DIR)/NexStore/Resources",
+					"$(PROJECT_DIR)/NexStore/Resources/idevice",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = nya.asami.ksign;
+				PRODUCT_BUNDLE_IDENTIFIER = novadev.nexstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -500,7 +500,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SERVER $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Ksign/Supporting Files/Feather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NexStore/Supporting Files/Feather-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -517,7 +517,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Ksign/Supporting Files/Feather.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "NexStore/Supporting Files/Feather.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -529,12 +529,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Ksign/Resources",
+					"$(PROJECT_DIR)/NexStore/Resources",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "SERVER=1";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ksign/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Ksign;
+				INFOPLIST_FILE = NexStore/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NexStore;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (c) 2025 Nagata Asami";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -551,12 +551,12 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Ksign/Resources",
-					"$(PROJECT_DIR)/Ksign/Resources/idevice",
+					"$(PROJECT_DIR)/NexStore/Resources",
+					"$(PROJECT_DIR)/NexStore/Resources/idevice",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = nya.asami.ksign;
+				PRODUCT_BUNDLE_IDENTIFIER = novadev.nexstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -566,7 +566,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SERVER;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Ksign/Supporting Files/Feather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NexStore/Supporting Files/Feather-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 16.0;
@@ -593,7 +593,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ksign.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ksign";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NexStore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NexStore";
 			};
 			name = Debug;
 		};
@@ -616,7 +616,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ksign.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ksign";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NexStore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NexStore";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -624,7 +624,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3379C1B42DA869A1004372DA /* Build configuration list for PBXProject "Ksign" */ = {
+		3379C1B42DA869A1004372DA /* Build configuration list for PBXProject "NexStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3379C1CB2DA869A3004372DA /* Debug */,
@@ -633,7 +633,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3379C1CD2DA869A3004372DA /* Build configuration list for PBXNativeTarget "Ksign" */ = {
+		3379C1CD2DA869A3004372DA /* Build configuration list for PBXNativeTarget "NexStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3379C1CE2DA869A3004372DA /* Debug */,
@@ -642,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AABA5D1F2DB3C87800BFCD2C /* Build configuration list for PBXNativeTarget "KsignTests" */ = {
+		AABA5D1F2DB3C87800BFCD2C /* Build configuration list for PBXNativeTarget "NexStoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AABA5D202DB3C87800BFCD2C /* Debug */,

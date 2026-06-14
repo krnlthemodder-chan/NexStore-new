@@ -28,8 +28,8 @@ struct SettingsView: View {
     }
     
     
-	private let _donationsUrl = "https://github.com/sponsors/nyasami"
-	private let _githubUrl = "https://github.com/nyasami/NexStore"
+	private let _donationsUrl = "https://github.com/sponsors/NovaDev404"
+	private let _githubUrl = "https://github.com/NovaDev404/NexStore"
     private let _discordUrl = "https://discord.gg/sfbZfQzVdQ"
 	// MARK: Body
     var body: some View {

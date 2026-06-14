@@ -110,7 +110,7 @@ extension ServerInstaller {
 				],
 				[
 					"kind": "display-image",
-					"url": "https://raw.githubusercontent.com/Nyasami/NexStore/refs/heads/main/NexStore/Resources/Assets.xcassets/AppIcons/AppIcon.appiconset/NexStore-default.png",
+					"url": "https://raw.githubusercontent.com/NovaDev404/NexStore/refs/heads/main/NexStore/Resources/Assets.xcassets/AppIcons/AppIcon.appiconset/NexStore-default.png",
 				],
 			],
 			"metadata": [

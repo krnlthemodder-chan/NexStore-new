@@ -20,9 +20,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AABA5D182DB3C87800BFCD2C"
-               BuildableName = "KsignTests.xctest"
-               BlueprintName = "KsignTests"
-               ReferencedContainer = "container:Ksign.xcodeproj">
+               BuildableName = "NexStoreTests.xctest"
+               BlueprintName = "NexStoreTests"
+               ReferencedContainer = "container:NexStore.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -42,9 +42,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3379C1B82DA869A1004372DA"
-            BuildableName = "Ksign.app"
-            BlueprintName = "Ksign"
-            ReferencedContainer = "container:Ksign.xcodeproj">
+            BuildableName = "NexStore.app"
+            BlueprintName = "NexStore"
+            ReferencedContainer = "container:NexStore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3379C1B82DA869A1004372DA"
-            BuildableName = "Ksign.app"
-            BlueprintName = "Ksign"
-            ReferencedContainer = "container:Ksign.xcodeproj">
+            BuildableName = "NexStore.app"
+            BlueprintName = "NexStore"
+            ReferencedContainer = "container:NexStore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

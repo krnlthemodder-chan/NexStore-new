@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3305BB3C2DB893A500660D45"
-               BuildableName = "Ksign-idevice.app"
-               BlueprintName = "Ksign-idevice"
-               ReferencedContainer = "container:Ksign.xcodeproj">
+               BuildableName = "NexStore-idevice.app"
+               BlueprintName = "NexStore-idevice"
+               ReferencedContainer = "container:NexStore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3305BB3C2DB893A500660D45"
-            BuildableName = "Ksign-idevice.app"
-            BlueprintName = "Ksign-idevice"
-            ReferencedContainer = "container:Ksign.xcodeproj">
+            BuildableName = "NexStore-idevice.app"
+            BlueprintName = "NexStore-idevice"
+            ReferencedContainer = "container:NexStore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3305BB3C2DB893A500660D45"
-            BuildableName = "Ksign-idevice.app"
-            BlueprintName = "Ksign-idevice"
-            ReferencedContainer = "container:Ksign.xcodeproj">
+            BuildableName = "NexStore-idevice.app"
+            BlueprintName = "NexStore-idevice"
+            ReferencedContainer = "container:NexStore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
