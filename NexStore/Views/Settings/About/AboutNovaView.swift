@@ -10,7 +10,7 @@ import NimbleViews
 import NimbleJSON
 
 // MARK: - View
-struct AboutNyaView: View {
+struct AboutNovaView: View {
 	private let _dataService = NBFetchService()
 	
 	@State private var shouldShowPatchNotes = false
@@ -54,7 +54,7 @@ struct AboutNyaView: View {
 			
 			NBSection("Special thanks!") {
 				Group {
-					Text(.localized("This couldn't have been done without the original Feather devs! ❤️"))
+					Text(.localized("This couldn't have been done without the original Feather and Ksign developers!"))
 						.foregroundStyle(.secondary)
 						.padding(.vertical, 2)
 				}
@@ -64,7 +64,7 @@ struct AboutNyaView: View {
             NBSection("Acknowledgements") {
                 NavigationLink(destination: AboutView()) {
                     HStack {
-                        Text("About the original Feather")
+                        Text("About the original Feather and Ksign")
                         Spacer()
                     }
                 }
@@ -86,7 +86,7 @@ struct AboutNyaView: View {
 	private func _showPatchNotes() {
 		UIAlertController.showAlertWithOk(
 			title: .localized("From NovaDev404, Version \(Bundle.main.version)"),
-			message: .localized("This version introduces:\n\n- Optimization for iOS 26\n- Bulk installation support for multiple apps\n- idevice installation method\n- Custom injection path & support for injecting tweaks into App Extensions\n- Support for .bundle files as tweaks (copied directly into the app bundle)\n- rsd support\n- Fix empty display name handling in Info.plist\n- Fix URL scheme issues for NexStore\n- Fix codesigning errors on specific apps with unusual bundle structures\n- Localization updates for German, Russian, Arabic, and Vietnamese"),
+			message: .localized("NexStore v2.0!"),
 			isCancel: true,
 			thankYou: true
 		)
@@ -94,7 +94,7 @@ struct AboutNyaView: View {
 }
 
 // MARK: - Extension: view
-extension AboutNyaView {
+extension AboutNovaView {
 	@ViewBuilder
 	private func _credit(
 		name: String?,

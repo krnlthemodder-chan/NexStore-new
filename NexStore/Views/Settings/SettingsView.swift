@@ -105,7 +105,7 @@ extension SettingsView {
 	@ViewBuilder
 	private func _feedback() -> some View {
 		Section {
-			NavigationLink(destination: AboutNyaView()) {
+			NavigationLink(destination: AboutNovaView()) {
                 Label(.localized("About"), systemImage: "info.circle")
             }
 			Button(.localized("Telegram Channel"), systemImage: "paperplane.circle") {
