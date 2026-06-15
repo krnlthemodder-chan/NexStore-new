@@ -1,0 +1,69 @@
+name: Simulator Build
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Simulator
+    runs-on: macos-26
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Build for Simulator
+        run: |
+          xcodebuild \
+            -project NexStore.xcodeproj \
+            -scheme NexStore \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -derivedDataPath $(TMPDIR)/NexStore \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO \
+            ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO
+
+      - name: Create Simulator Zip
+        run: |
+          APP_PATH=$(find $(TMPDIR)/NexStore/Build/Products/Release-iphonesimulator -name "*.app" | head -n 1)
+          echo "Found app at: $APP_PATH"
+          
+          mkdir -p packages
+          zip -r9 "packages/NexStore-Simulator.zip" "$APP_PATH"
+
+      - name: Update Simulator Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LATEST_OFFICIAL_TAG=$(git describe --tags --match "v*" --abbrev=0 2>/dev/null || echo "")
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "## Commit: \`$COMMIT_MSG\` (${{ github.sha }})" >> release_notes.md
+          echo "### New in this build (Compared to $LATEST_OFFICIAL_TAG):" >> release_notes.md
+            
+          CHANGES=$(git log --pretty=format:"* %s (%h)" ${LATEST_OFFICIAL_TAG}..HEAD)
+            
+          if [ -z "$CHANGES" ]; then
+            echo "* No code changes since $LATEST_OFFICIAL_TAG" >> release_notes.md
+          else
+            echo "$CHANGES" >> release_notes.md
+          fi
+          
+          echo "### Commit SHA: ${{ github.sha }}" >> release_notes.md
+          
+          cat release_notes.md
+
+          gh release delete simulator --cleanup-tag -y || true
+          
+          gh release create simulator "packages/NexStore-Simulator.zip" \
+            --title "Latest Simulator Build" \
+            --notes "$(cat release_notes.md)" \
+            --prerelease \
+            --target ${{ github.sha }}
