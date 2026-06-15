@@ -27,5 +27,6 @@ public struct NBListAdaptable<Content>: View where Content: View {
 				_content
 			}
 		}
+		.padding(.bottom, 80) // Extra space for bottom bar
 	}
 }

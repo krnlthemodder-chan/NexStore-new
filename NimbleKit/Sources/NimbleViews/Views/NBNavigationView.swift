@@ -27,6 +27,15 @@ public struct NBNavigationView<Content>: View where Content: View {
 			_content
 				.navigationTitle(_title)
 				.navigationBarTitleDisplayMode(_mode)
+				.toolbar {
+					ToolbarItem(placement: .principal) {
+						Text(_title)
+							.font(.headline)
+							.frame(maxWidth: .infinity, alignment: .leading)
+							.padding(.leading, 16)
+					}
+				}
+				.navigationBarTitleDisplayMode(.inline)
 		}
 	}
 }

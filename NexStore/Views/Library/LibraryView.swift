@@ -63,7 +63,7 @@ struct LibraryView: View {
 	
 	// MARK: Body
     var body: some View {
-		NBNavigationView(.localized("Library")) {
+		NBNavigationView(.localized("My Apps")) {
 			VStack(spacing: 0) {
 				Picker("", selection: $_selectedTab) {
 					Text(.localized("Downloaded Apps")).tag(0)

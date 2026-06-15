@@ -50,28 +50,27 @@ struct AboutNovaView: View {
 			
 			NBSection(.localized("Credits")) {
 				_credit(name: "NovaDev404", desc: "Developer", github: "NovaDev404")
+				_credit(name: "Claration", desc: "Feather Developer", github: "claration")
+				_credit(name: "Nyasami", desc: "Ksign Developer", github: "nyasami")
 			}
 			
-			NBSection("Special thanks!") {
+			NBSection("Special thanks") {
 				Group {
-					Text(.localized("This couldn't have been done without the original Feather and Ksign developers!"))
+					Text(.localized("This couldn't have been done without the original Feather and Ksign developers, and any other contributors!"))
 						.foregroundStyle(.secondary)
 						.padding(.vertical, 2)
 				}
 				.transition(.slide)
 			}
             
-            NBSection("Acknowledgements") {
-                NavigationLink(destination: AboutView()) {
-                    HStack {
-                        Text("About the original Feather and Ksign")
-                        Spacer()
-                    }
-                }
-            } footer: {
+            NBSection {
                 Text(Bundle.main.bundleIdentifier ?? "")
+                    .foregroundStyle(.secondary)
+                    .font(.caption)
             }
 		}
+		.listStyle(.insetGrouped)
+		.padding(.bottom, 80) // Extra space for bottom bar
 		.onAppear {
 			// Show patch notes when navigating to this view if they haven't been shown before
 			if !UserDefaults.standard.bool(forKey: "patchNotesShown") {

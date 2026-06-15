@@ -33,7 +33,7 @@ struct AppIconView: View {
             id: "wave",
             title: "Wave",
             subtitle: "Ocean Blue",
-            iconName: "AppIcon-Wave",
+            iconName: "AppIcon-Wave-Preview",
             alternateIconName: "AppIcon-Wave"
         ),
     ]
@@ -47,6 +47,7 @@ struct AppIconView: View {
                 }
             }
         }
+        .padding(.bottom, 80) // Extra space for bottom bar
         .onAppear {
             selectedIcon = UIApplication.shared.alternateIconName
         }

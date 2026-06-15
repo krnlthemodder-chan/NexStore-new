@@ -45,5 +45,6 @@ public struct NBList<Content>: View where Content: View {
 		}
 		.navigationTitle(_title)
 		.navigationBarTitleDisplayMode(_mode)
+		.padding(.bottom, 80) // Extra space for bottom bar
 	}
 }

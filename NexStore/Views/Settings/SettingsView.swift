@@ -92,6 +92,7 @@ struct SettingsView: View {
 
             }
         }
+        .padding(.bottom, 80) // Extra space for bottom bar
     }
 }
 
