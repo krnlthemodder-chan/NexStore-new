@@ -49,7 +49,7 @@ struct AboutNovaView: View {
             .listRowBackground(EmptyView())
 			
 			NBSection(.localized("Credits")) {
-				_credit(name: "NovaDev404", desc: "Developer", github: "NovaDev404")
+				_credit(name: "NovaDev404", desc: "NexStore Developer", github: "NovaDev404")
 				_credit(name: "Claration", desc: "Feather Developer", github: "claration")
 				_credit(name: "Nyasami", desc: "Ksign Developer", github: "nyasami")
 			}
