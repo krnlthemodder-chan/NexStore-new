@@ -124,14 +124,7 @@ struct LiquidGlassTabBar: View {
 		.padding(.vertical, 12)
 		.background(
 			RoundedRectangle(cornerRadius: 24)
-				.fill(.clear)
-				.modifier { content in
-					if #available(iOS 26, *) {
-						content.glassEffect()
-					} else {
-						content.background(.ultraThinMaterial)
-					}
-				}
+				.fill(.ultraThinMaterial)
 		)
 		.clipShape(RoundedRectangle(cornerRadius: 24))
 		.shadow(color: .black.opacity(0.15), radius: 20, x: 0, y: 10)

@@ -68,9 +68,7 @@ struct ColorPickerView: View {
             }
         }
         .onAppear {
-            if let color = Color(hex: selectedColor) {
-                tempColor = color
-            }
+            tempColor = Color(hex: selectedColor)
         }
     }
 }
