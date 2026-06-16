@@ -32,7 +32,7 @@ public struct NBNavigationView<Content>: View where Content: View {
 						Text(_title)
 							.font(.headline)
 							.frame(maxWidth: .infinity, alignment: .leading)
-							.padding(.leading, 16)
+							.padding(.leading, 20)
 					}
 				}
 				.navigationBarTitleDisplayMode(.inline)
