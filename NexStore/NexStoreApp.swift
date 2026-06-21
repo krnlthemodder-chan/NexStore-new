@@ -24,32 +24,31 @@ struct NexStoreApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			if !hasCompletedWelcome || showWelcomeSlides {
+			VStack {
+                ExtractHeaderView(extractManager: extractManager)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+				DownloadHeaderView(downloadManager: downloadManager)
+					.transition(.move(edge: .top).combined(with: .opacity))
+				VariedTabbarView()
+					.environment(\.managedObjectContext, storage.context)
+					.onOpenURL(perform: _handleURL)
+					.transition(.move(edge: .top).combined(with: .opacity))
+			}
+			.ignoresSafeArea()
+			.animation(.smooth, value: downloadManager.manualDownloads.description)
+            .animation(.smooth, value: extractManager.extractItems.description)
+			.onReceive(accentColorManager.objectWillChange) { _ in
+				accentColorManager.updateGlobalTintColor()
+			}
+			.onAppear {
+				accentColorManager.updateGlobalTintColor()
+				if logsManager.isCapturing { logsManager.startCapture() }
+			}
+			.fullScreenCover(isPresented: Binding(
+				get: { !hasCompletedWelcome || showWelcomeSlides },
+				set: { if !$0 { showWelcomeSlides = false } }
+			)) {
 				WelcomeView()
-					.onDisappear {
-						showWelcomeSlides = false
-					}
-			} else {
-				VStack {
-	                ExtractHeaderView(extractManager: extractManager)
-	                    .transition(.move(edge: .top).combined(with: .opacity))
-					DownloadHeaderView(downloadManager: downloadManager)
-						.transition(.move(edge: .top).combined(with: .opacity))
-					VariedTabbarView()
-						.environment(\.managedObjectContext, storage.context)
-						.onOpenURL(perform: _handleURL)
-						.transition(.move(edge: .top).combined(with: .opacity))
-				}
-				.ignoresSafeArea()
-				.animation(.smooth, value: downloadManager.manualDownloads.description)
-	            .animation(.smooth, value: extractManager.extractItems.description)
-				.onReceive(accentColorManager.objectWillChange) { _ in
-					accentColorManager.updateGlobalTintColor()
-				}
-				.onAppear {
-					accentColorManager.updateGlobalTintColor()
-					if logsManager.isCapturing { logsManager.startCapture() }
-				}
 			}
 		}
 	}
