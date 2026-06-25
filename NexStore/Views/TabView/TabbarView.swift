@@ -58,19 +58,12 @@ struct CustomTabBar: View {
 				} label: {
 					VStack(spacing: 4) {
 						ZStack {
-							// Icon/Logo
-							if let appIcon = UIImage(named: "AppIcon") {
-								Image(uiImage: appIcon)
-									.resizable()
-									.aspectRatio(contentMode: .fit)
-									.frame(width: 24, height: 24)
-									.clipShape(RoundedRectangle(cornerRadius: 6))
-									.opacity(selectedTab == tab ? 1.0 : 0.5)
-							} else {
-								Image(systemName: tab.icon)
-									.font(.system(size: 22, weight: selectedTab == tab ? .semibold : .regular))
-									.foregroundStyle(selectedTab == tab ? Color.accentColor : .secondary)
-							}
+							// Icon
+							Image(systemName: tab.icon)
+								.font(.system(size: 22, weight: selectedTab == tab ? .semibold : .regular))
+								.foregroundStyle(selectedTab == tab ? Color.accentColor : .secondary)
+								.scaleEffect(selectedTab == tab ? 1.1 : 1.0)
+								.animation(.spring(response: 0.3, dampingFraction: 0.6), value: selectedTab)
 						}
 						.frame(height: 32)
 						
@@ -99,8 +92,6 @@ struct CustomTabBar: View {
 				.fill(.ultraThinMaterial)
 		)
 		.clipShape(RoundedRectangle(cornerRadius: 24))
-		.shadow(color: .black.opacity(0.15), radius: 20, x: 0, y: 10)
-		.shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
 		.onPreferenceChange(TabPositionKey.self) { positions in
 			self.tabPositions = positions.sorted { $0.key < $1.key }.map { $0.value }
 		}
