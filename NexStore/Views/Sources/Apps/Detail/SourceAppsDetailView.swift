@@ -230,7 +230,7 @@ extension SourceAppsDetailView {
 	@ViewBuilder
 	private func _header() -> some View {
 		ZStack {
-			if let iconURL = source.currentIconURL {
+			if let iconURL = app.iconURL {
 				LazyImage(url: iconURL) { state in
 					if let image = state.image {
 						image.resizable()
