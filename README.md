@@ -1,39 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NexStore v2 - Dashboard</title>
+    
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-<img src="https://raw.githubusercontent.com/NovaDev404/NexStore-new/main/NexStore/Resources/Assets.xcassets/AppIcon.appiconset/NexStore-default.png" height="200">
+    <style>
+        /* Premium iOS System Color Design Tokens */
+        :root {
+            --bg-system: #f2f2f7;
+            --bg-secondary: #ffffff;
+            --text-primary: #000000;
+            --text-muted: #8e8e93;
+            --nav-blur-bg: rgba(255, 255, 255, 0.75);
+            --border-separator: rgba(60, 60, 67, 0.12);
+            --overlay-bg: rgba(0, 0, 0, 0.15);
+            
+            /* Native Apple Accents */
+            --ios-blue: #007aff;
+            --ios-green: #34c759;
+            --ios-purple: #af52de;
+            --ios-indigo: #5856d6;
+            --ios-orange: #ff9500;
+        }
 
-# NexStore v2 
-[![GitHub Release](https://img.shields.io/github/v/release/NovaDev404/NexStore-new?style=for-the-badge&color=3c94fc)](https://github.com/NovaDev404/NexStore-new/releases/latest) 
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/NovaDev404/NexStore-new/total?style=for-the-badge&color=6bc563)](https://github.com/NovaDev404/NexStore-new/releases)
+        [data-theme="dark"] {
+            --bg-system: #1c1c1e;
+            --bg-secondary: #2c2c2e;
+            --text-primary: #ffffff;
+            --text-muted: #aeaeae;
+            --nav-blur-bg: rgba(28, 28, 30, 0.75);
+            --border-separator: rgba(84, 84, 88, 0.36);
+            --overlay-bg: rgba(0, 0, 0, 0.4);
+        }
 
-This is a WIP version of NexStore, forked from Ksign.
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-## Why?
-Since Esign is end of service so people been moving to other signing apps, but Esign was a really big part of the community, so with the help of Feather as the base app, I tried to recreate Esign as close as possible so you guys can easier to get familiar and less app switching for smooth sideloading.
+        body {
+            background-color: var(--bg-system);
+            color: var(--text-primary);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+            padding-top: 50px;
+        }
 
-Another reason is this app was built specifically for Khoindvn to share his certificates, allowing more people to access to sideloading without even have to buy a certificate!
+        /* Translucent iOS Top Bar */
+        .ios-navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+            background-color: var(--nav-blur-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 0.5px solid var(--border-separator);
+            z-index: 100;
+        }
 
-## Help
-You can create your Issue at [Issue](https://github.com/NovaDev404/NexStore-new/issues), this will also be the place for you to request a new feature so feel free to make one!
+        .nav-title {
+            font-weight: 600;
+            font-size: 17px;
+            letter-spacing: -0.4px;
+        }
 
-You can also join NexStore Discord [here](https://discord.gg/sfbZfQzVdQ) for better communication.
-
-## Download
-Go to [Releases](https://github.com/NovaDev404/NexStore-new/releases) and download the newest ipa from there.
-
-## Star History
-
-<a href="https://www.star-history.com/#NovaDev404/NexStore-new&Timeline">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=NovaDev404/NexStore-new&type=Timeline&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=NovaDev404/NexStore-new&type=Timeline" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=NovaDev404/NexStore-new&type=Timeline" />
- </picture>
-</a>
-
-## Credits
-- Ksign by [Nyasami](https://github.com/Nyasami/Ksign)  
-- Feather by [Claration](https://github.com/claration/Feather)  
-
-## Disclaimer
-
-This project is maintained here, on GitHub. Releases are distributed here, on GitHub. We do not currently have a project website outside of this repository. Please make sure to avoid any sites that host our software as they are often malicious and are there to mislead to user.
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--ios-blue);
+            cursor: pointer;
+            display: flex;
